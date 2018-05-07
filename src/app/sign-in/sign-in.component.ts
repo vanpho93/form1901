@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,12 +9,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class SignInComponent implements OnInit {
   formSignIn: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.formSignIn = new FormGroup({
-      email: new FormControl('', Validators.email),
-      password: new FormControl('', Validators.minLength(4)),
+    this.formSignIn = this.fb.group({
+      email: ['', Validators.email],
+      password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
@@ -28,6 +28,7 @@ export class SignInComponent implements OnInit {
   }
 
   get passwordInvalid() {
-    return this.formSignIn.get('password').invalid;
+    const passwordControl = this.formSignIn.get('password');
+    return passwordControl.touched && passwordControl.invalid;
   }
 }
