@@ -13,13 +13,13 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.formSignIn = this.fb.group({
-      email: ['', Validators.email],
+      email: ['', [Validators.required, gmail]],
       password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
   signIn() {
-    console.log(this.formSignIn);
+    console.log(this.formSignIn.get('email'));
   }
 
   get emailInvalid() {
@@ -27,8 +27,21 @@ export class SignInComponent implements OnInit {
     return emailControl.touched && emailControl.invalid;
   }
 
+  get emailErrorMessage() {
+    const emailControl = this.formSignIn.get('email');
+    const { gmail, required } = emailControl.errors;
+    if (required) return 'Email không được bỏ trống';
+    if (gmail) return 'Email phải là gmail';
+  }
+
   get passwordInvalid() {
     const passwordControl = this.formSignIn.get('password');
     return passwordControl.touched && passwordControl.invalid;
   }
+}
+
+function gmail(control: FormControl) {
+  const value: string = control.value;
+  const isGmail = value.trim().endsWith('@gmail.com');
+  return isGmail ? null : { gmail: true };
 }
