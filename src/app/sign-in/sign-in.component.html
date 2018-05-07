@@ -11,7 +11,7 @@
       placeholder="Enter your email"
       formControlName="email"
     >
-    <i *ngIf="formSignIn.controls.email.errors?.email">
+    <i *ngIf="emailInvalid">
       Email không hợp lệ
     </i>
   </div>
@@ -23,7 +23,9 @@
       placeholder="Enter your password"
       formControlName="password"
     >
-    
+    <i *ngIf="passwordInvalid">
+      Password không hợp lệ
+    </i>
   </div>
   <button class="btn btn-success" [disabled]="formSignIn.invalid">
     Sign In

@@ -13,12 +13,21 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.formSignIn = new FormGroup({
-      email: new FormControl('vanpho01@gmail.com', Validators.email),
-      password: new FormControl(),
+      email: new FormControl('', Validators.email),
+      password: new FormControl('', Validators.minLength(4)),
     });
   }
 
   signIn() {
     console.log(this.formSignIn);
+  }
+
+  get emailInvalid() {
+    const emailControl = this.formSignIn.get('email');
+    return emailControl.touched && emailControl.invalid;
+  }
+
+  get passwordInvalid() {
+    return this.formSignIn.get('password').invalid;
   }
 }
