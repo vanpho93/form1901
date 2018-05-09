@@ -5,7 +5,13 @@
 <p>{{ now | date : 'dd/MM/yyyy' }}</p>
 <p>{{ 1.4 | round: true: 10 }}</p>
 <p>{{ 1.4 | round: true }}</p> -->
-<div *ngFor="let p of people | sortProp: 'name'">
+<select [(ngModel)]="prop">
+  <option value="name">Name</option>
+  <option value="age">Age</option>
+  <option value="height">Height</option>
+</select>
+
+<div *ngFor="let p of people | sortProp: prop">
   <h3>Name: {{ p.name }}</h3>
   <p>Age: {{ p.age }}</p>
   <p>Height: {{ p.height }}</p>
