@@ -10,6 +10,7 @@ import { MyJsonPipe } from './my-json.pipe';
 import { RoundPipe } from './round.pipe';
 import { SortAgePipe } from './sort-age.pipe';
 import { SortPropPipe } from './sort-prop.pipe';
+import { ChatComponent } from './chat.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SortPropPipe } from './sort-prop.pipe';
     MyJsonPipe,
     RoundPipe,
     SortAgePipe,
-    SortPropPipe
+    SortPropPipe,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
