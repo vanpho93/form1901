@@ -1,6 +1,12 @@
-<p>
+<!-- <p>
   Person {{ person | myJson | uppercase }}
 </p>
 <p> {{ 'abCdEfffg' | lowercase }}</p>
 <p>{{ now | date : 'dd/MM/yyyy' }}</p>
-<p>{{ 1.4 | round }}</p>
+<p>{{ 1.4 | round: true: 10 }}</p>
+<p>{{ 1.4 | round: true }}</p> -->
+<div *ngFor="let p of people">
+  <h3>Name: {{ p.name }}</h3>
+  <p>Age: {{ p.age }}</p>
+  <p>Height: {{ p.height }}</p>
+</div>
