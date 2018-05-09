@@ -7,6 +7,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { FormSignUpComponent } from './form-sign-up/form-sign-up.component';
 import { PipeExamComponent } from './pipe-exam/pipe-exam.component';
 import { MyJsonPipe } from './my-json.pipe';
+import { RoundPipe } from './round.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MyJsonPipe } from './my-json.pipe';
     SignInComponent,
     FormSignUpComponent,
     PipeExamComponent,
-    MyJsonPipe
+    MyJsonPipe,
+    RoundPipe
   ],
   imports: [
     BrowserModule,

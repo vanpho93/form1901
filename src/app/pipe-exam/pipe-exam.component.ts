@@ -13,5 +13,4 @@ export class PipeExamComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
