@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './form-sign-up.component.html',
   styleUrls: ['./form-sign-up.component.css']
 })
+
 export class FormSignUpComponent implements OnInit {
   formSignUp: FormGroup;
   constructor(private fb: FormBuilder) { }
