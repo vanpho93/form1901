@@ -12,7 +12,7 @@ export class PipeExamComponent implements OnInit {
     { name: 'Ti', age: 10, height: 150 },
     { name: 'Teo', age: 12, height: 120 },
     { name: 'Tun', age: 13, height: 130 },
-    { name: 'Tuan', age: 17, height: 140 },
+    { name: 'Tuan', age: 11, height: 140 },
   ];
   constructor() { }
 

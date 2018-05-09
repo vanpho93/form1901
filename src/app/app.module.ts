@@ -8,6 +8,7 @@ import { FormSignUpComponent } from './form-sign-up/form-sign-up.component';
 import { PipeExamComponent } from './pipe-exam/pipe-exam.component';
 import { MyJsonPipe } from './my-json.pipe';
 import { RoundPipe } from './round.pipe';
+import { SortAgePipe } from './sort-age.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RoundPipe } from './round.pipe';
     FormSignUpComponent,
     PipeExamComponent,
     MyJsonPipe,
-    RoundPipe
+    RoundPipe,
+    SortAgePipe
   ],
   imports: [
     BrowserModule,

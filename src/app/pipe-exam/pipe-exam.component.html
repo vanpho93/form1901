@@ -5,7 +5,7 @@
 <p>{{ now | date : 'dd/MM/yyyy' }}</p>
 <p>{{ 1.4 | round: true: 10 }}</p>
 <p>{{ 1.4 | round: true }}</p> -->
-<div *ngFor="let p of people">
+<div *ngFor="let p of people | sortAge">
   <h3>Name: {{ p.name }}</h3>
   <p>Age: {{ p.age }}</p>
   <p>Height: {{ p.height }}</p>
