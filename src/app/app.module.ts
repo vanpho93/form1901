@@ -9,6 +9,7 @@ import { PipeExamComponent } from './pipe-exam/pipe-exam.component';
 import { MyJsonPipe } from './my-json.pipe';
 import { RoundPipe } from './round.pipe';
 import { SortAgePipe } from './sort-age.pipe';
+import { SortPropPipe } from './sort-prop.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SortAgePipe } from './sort-age.pipe';
     PipeExamComponent,
     MyJsonPipe,
     RoundPipe,
-    SortAgePipe
+    SortAgePipe,
+    SortPropPipe
   ],
   imports: [
     BrowserModule,
