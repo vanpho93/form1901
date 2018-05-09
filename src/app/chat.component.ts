@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import io from 'socket.io-client';
 
 @Component({
     selector: 'app-chat',
@@ -11,12 +12,22 @@ import { Component } from '@angular/core';
                   placeholder="Enter your message"
                   [(ngModel)]="message"
                 >
-                <button class="btn btn-success">Send</button>
+                <button class="btn btn-success" (click)="send();">Send</button>
             </div>
         </div>
     `
 })
 
 export class ChatComponent {
+    socket: any;
+    constructor() {
+        this.socket = io.connect('https://socket1901.herokuapp.com/');
+        this.socket.on('SERVER_SEND_MESSAGE', data => alert(data));
+    }
     message = '';
+
+    send() {
+        this.socket.emit('CLIENT_SEND_MESSAGE', this.message);
+        this.message = '';
+    }
 }
